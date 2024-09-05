@@ -17,20 +17,19 @@ background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, F
 
 .container {
   /* background-color: rebeccapurple; */
-  margin: 40px 400px;
+  margin: 60px auto;
   width: 60%;
   height: 700px;
 }
 
 .nav-img{
-  /* margin: 0 533px ; */
-width: 40%;
+width: 100%;
 }
 
 .nav-img img{
-    left: 500px;
-    height: 100px;
-    margin: 1px 0px 10px 530px;
+  height: 100px;
+  width: 7%;
+  margin: 5px 46.5%;
 }
 
 .container-block {
@@ -41,9 +40,10 @@ width: 40%;
 }
 
 .container-img {
-  /* background-color: antiquewhite; */
   height: 700px;
   width: 50%;
+  position: relative;
+
 }
 
 .img {
@@ -54,14 +54,14 @@ width: 40%;
 }
 
 .img-text {
-    /* background-color: #f09819; */
-    width: 80%;
-    height: 200px;
-    position: relative;
+  position: absolute;
+  text-align: center;
+    width: 100%;
+    height: 30px;
     color: whitesmoke;
     font-size: 20px;
-    top: -520px;
-    left: 120px;
+    top: 150px;
+    /* left: 120px; */
 }
 
 .container-input {
@@ -72,11 +72,8 @@ width: 40%;
   border-bottom-right-radius: 10px;
 }
 
-.container-header {
-}
-
 .group {
-  margin: 20% 20%;
+  margin: 10% 20% 0% 20%;
   /* background-color: aqua; */
   height: 40%;
   width: 60%;
@@ -91,6 +88,7 @@ h1 {
   font-family: "Playwrite AU NSW", cursive;
   font-size: 40px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 label {
@@ -120,10 +118,14 @@ input:focus {
 }
 
 .container-button {
-  /* background-color: aqua; */
-  margin: 0 170px;
+  /* margin: 0 170px; */
   width: 100%;
 }
+
+.button-holder {
+  margin: 10% 0px 0px 25%;
+}
+
 /* 
 .button-create {
   padding: 15px 32px;
@@ -134,21 +136,22 @@ input:focus {
 
 .option {
   font-size: 20px;
-  width: 45%;
+  width: 60%;
   text-align: center;
 }
 
 .hr-lines{
     position: relative;
+    margin-left: 5px;
     max-width: 500px;
     /* margin: 100px auto; */
     text-align: center;
   }
   
   .hr-lines:before{
-    content:" ";
+    content: " ";
     height: 2px;
-    width: 180px;
+    width: 160px;
     background: black;
     display: block;
     position: absolute;
@@ -157,9 +160,9 @@ input:focus {
   }
   
   .hr-lines:after{
-    content:" ";
+    content: " ";
     height: 2px;
-    width: 180px;
+    width: 160px;
     background: black;
     display: block;
     position: absolute;
@@ -177,7 +180,7 @@ input:focus {
 
 
 .button-87 {
-  width: 40%;
+  width: 60%;
   margin: 10px;
   padding: 15px 30px;
   text-align: center;
@@ -205,4 +208,77 @@ input:focus {
 
 .button-87:active {
   transform: scale(0.95);
+}
+
+
+@media (max-width: 1690px) {
+
+  .hr-lines:before {
+    /* display: none; */
+    left: -70px;
+    width: 125px;
+  }
+
+  .hr-lines:after {
+    /* display: none; */
+    right: -70px;
+    width: 125px;
+  }
+}
+
+
+@media (max-width: 1211px) {
+  .container {
+    /* background-color: rebeccapurple; */
+    /* margin-top: 280px; */
+    margin: 10px auto;
+    margin-bottom: 800px;
+  }
+
+  .container-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-img {
+    width: 100%;
+  }
+  
+  .nav-img img {
+    height: 200px;
+    width: 25%;
+    margin: 10% 41% 1px 41%;
+  }
+
+  .option {
+    margin-left: 5px;
+  }
+
+  .hr-lines:before {
+    display: none;
+  }
+
+  .hr-lines:after {
+    display: none;
+  }
+
+  .container-input {
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+  }
+
+  .container-img {
+    width: 100%;
+    margin-top: 90px;
+    height: 60%;
+  }
+
+  .img{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+  }
 }

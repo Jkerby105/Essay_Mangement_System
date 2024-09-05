@@ -2,33 +2,33 @@ import React from "react";
 
 import logo from '../assets/writenext-high-resolution-logo-black-transparent.png';
 import bannerImage from '../assets/aaron-burden-CKlHKtCJZKk-unsplash.jpg'
-import './LoginSignup.css';
+// import './LoginSignup.css';
 
 
 export const LoginSignUp = () => {
   return (
-    <main class="container">
-      <div class="nav-img">
+    <main className="container">
+      <div className="nav-img">
         <img
           src={logo}
           alt="logo for WriteNext"
         />
       </div>
-      <form action="">
-        <div class="container-block">
-          <section class="container-input">
-            <div class="group">
-              <header class="container-header">
+        <div className="container-block">
+          <section className="container-input">
+            <form action="">
+            <div className="group">
+              <header className="container-header">
                 <h1>Login In</h1>
               </header>
-              <div class="group-input">
-                <label for="name"> User Name </label>
+              <div className="group-input">
+                <label htmlFor="name"> User Name </label>
                 <input type="text" name="name" required />
-                <label for="email"> Email </label>
+                <label htmlFor="email"> Email </label>
                 <input type="email" name="email" required />
-                <label for="password"> Password </label>
+                <label htmlFor="password"> Password </label>
                 <input type="text" name="password" minlength="10" required />
-                <label for="confirmPassword"> Confirm Password</label>
+                <label htmlFor="confirmPassword"> Confirm Password</label>
                 <input
                   type="text"
                   name="confirmPassword"
@@ -38,30 +38,32 @@ export const LoginSignUp = () => {
               </div>
             </div>
 
-            <div class="container-button">
+            <div className="container-button">
+              <div className="button-holder">
               <div>
-                <button class="button-87">Login In</button>
+                <button className="button-87">Login In</button>
               </div>
-              <div class="option hr-lines">OR</div>
+              <div className="option hr-lines">OR</div>
+              <div>
+                <button className="button-87">Create Account</button>
+              </div>
+              </div>
 
-              <div>
-                <button class="button-87">Create Account</button>
-              </div>
             </div>
+            </form>
           </section>
 
-          <section class="container-img">
+          <section className="container-img">
             <img
-              class="img"
+              className="img"
               src={bannerImage}
               alt="Picture of someone starting to write"
             />
-            <div class="img-text">
+            <div className="img-text">
               The Best is Yet to Be Written. Keep Writing.
             </div>
           </section>
         </div>
-      </form>
     </main>
   );
 };

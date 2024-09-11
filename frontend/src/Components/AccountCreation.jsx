@@ -1,7 +1,7 @@
 import React from "react";
 import logoImage from "../assets/writenext-high-resolution-logo-black-transparent.png";
 import bannerImage from "../assets/jan-kahanek-fVUl6kzIvLg-unsplash.jpg";
-import "./AccountCreation.css";
+// import "./AccountCreation.css";
 
 export const AccountCreation = () => {
   return (

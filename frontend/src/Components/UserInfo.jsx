@@ -1,15 +1,15 @@
 import React from 'react'
 import imageLogo from '../assets/writenext-high-resolution-logo-white-transparent.png';
-import './UserInfo.css'
+import classes from './UserInfo.module.css'
 
 export const UserInfo = () => {
   return (
-    <div className="container">
-    <nav className="nav">
-        <div className="nav-img">
+    <div className={classes.container}>
+    <nav className={classes.nav}>
+        <div className={classes['nav-img']}>
             <img src={imageLogo} alt="logo for WriteNext"></img>
         </div>
-        <div className="nav-link">
+        <div className={classes['nav-link']}>
             <div>Profile</div>
             <div>Import</div>
             <div>Logout</div>
@@ -18,35 +18,35 @@ export const UserInfo = () => {
     </nav>
 
 
-    <main className="content-holder">
-        <div className="content-holder-left">
-            <div className="content-holder-group">
+    <main className={classes['content-holder']}>
+        <div className={classes['content-holder-left']}>
+            <div className={classes['content-holder-group']}>
                 {/* <div>
-                    <link className="content-item" rel="stylesheet" >Profile</link>
+                    <link className={classes['content-item']} rel="stylesheet" >Profile</link>
                 </div>
                 <div>
-                    <link className="content-item" rel="stylesheet">Edit Profile</link>
+                    <link className={classes['content-item']} rel="stylesheet">Edit Profile</link>
                 </div>
                 <div>
-                    <link className="content-item" rel="stylesheet">Project</link>
+                    <link className={classes['content-item']} rel="stylesheet">Project</link>
                 </div>
                 <div>
-                    <link className="content-item" rel="stylesheet" >Edit Password</link>
+                    <link className={classes['content-item']} rel="stylesheet" >Edit Password</link>
                 </div>
                 <div>
-                    <link className="content-item" rel="stylesheet">Logout</link>
+                    <link className={classes['content-item']} rel="stylesheet">Logout</link>
                 </div> */}
             </div>
-            <hr className="line"></hr>
+            <hr className={classes.line}></hr>
             <div>
             <img src={imageLogo} alt="logo for WriteNext"></img>
             </div>
         </div>
          {/* Profile  */}
-        <div className="content-holder-right">
-            <div className="content-holder-right-inner">
+        <div className={classes['content-holder-right']}>
+            <div className={classes['content-holder-right-inner']}>
                 <div>
-                    <i className="fa-solid fa-user"></i>
+                    <i className={`${classes['fa-solid']} ${classes['fa-user']}`}></i>
                 </div>
                 <div>
                     <label htmlFor="name">User Name</label>
@@ -58,7 +58,7 @@ export const UserInfo = () => {
                 </div>
                 {/* <link rel="stylesheet" href="">w</link>
                 <link rel="stylesheet" href="">w</link> */}
-                <div className="button-group">
+                <div className={classes['button-group']}>
                     <button>Confirm</button>
                     <button>Cancel</button>
                 </div>

@@ -1,33 +1,34 @@
 import React from "react";
 import logoImage from "../assets/writenext-high-resolution-logo-black-transparent.png";
 import bannerImage from "../assets/jan-kahanek-fVUl6kzIvLg-unsplash.jpg";
-// import "./AccountCreation.css";
+import { Link } from "react-router-dom";
+import classes from "./AccountCreation.module.css";
 
 export const AccountCreation = () => {
   return (
-    <main className="container">
-      <div className="nav-img">
+    <main className={classes.container}>
+      <div className={classes['nav-img']}>
         <img src={logoImage} alt="logo for WriteNext" />
       </div>
-      <div className="container-block">
-        <section className="container-img">
+      <div className={classes['container-block']}>
+        <section className={classes['container-img']}>
           <img
-            className="img"
+            className={classes.img}
             src={bannerImage}
             alt="Picture of someone starting to write"
           />
-          <div className="img-text">
+          <div className={classes['img-text']}>
             Every Great Story Starts Here. Start Writing.
           </div>
         </section>
 
-        <section className="container-input">
+        <section className={classes['container-input']}>
           <form action="">
-            <div className="group">
-              <header className="container-header">
+            <div className={classes.group}>
+              <header className={classes['container-header']}>
                 <h1>Create Account</h1>
               </header>
-              <div className="group-input">
+              <div className={classes['group-input']}>
                 <label htmlFor="email"> Email </label>
                 <input type="email" name="email" required />
                 <label htmlFor="username"> Username </label>
@@ -43,15 +44,15 @@ export const AccountCreation = () => {
                 />
               </div>
             </div>
-            <div className="container-button">
-            <div className="button-holder">
+            <div className={classes['container-button']}>
+            <div className={classes['button-holder']}>
               <div>
-                <button className="button-87">Create Account</button>
+                <Link to="." className={classes['button-87']}>Create Account</Link>
               </div>
-              <div className="option hr-lines">OR</div>
+              <div className={`${classes.option} ${classes['hr-lines']}`}>OR</div>
 
               <div>
-                <button className="button-87">Login</button>
+                <Link to="/" className={classes['button-87']}>Login</Link>
               </div>
               </div>
             </div>

@@ -6,14 +6,23 @@ import {
 import { Login } from './Pages/Login'
 import { CreateAccount } from './Pages/CreateAccount';
 import { DashBoard } from './Pages/DashBoard';
-import { ProfileInfo } from './Pages/ProfileInfo';
+// import { ProfileInfo } from './Pages/ProfileInfo';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProfileInfo/>,
+    element: <Login />,
   },
+  {
+    path: "createAccount",
+    element: <CreateAccount />
+  },
+  {
+    path: "dashBoard",
+    element: <DashBoard/>
+  }
+
 ]);
 
 function App() {

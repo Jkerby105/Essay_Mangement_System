@@ -7,3 +7,10 @@ export const Login = () => {
     <LoginSignUp/>
   )
 }
+
+
+
+
+export function loader(){
+
+}

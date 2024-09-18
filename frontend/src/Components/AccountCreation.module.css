@@ -97,6 +97,10 @@ label {
   margin-bottom: 4px;
 }
 
+.error{
+  color: red;
+}
+
 input {
   padding: 4px;
   margin-bottom: 5px;

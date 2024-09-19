@@ -4,8 +4,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Login } from './Pages/Login'
-import { CreateAccount } from './Pages/CreateAccount';
+import { CreateAccount, action as accountCreationAction } from './Pages/CreateAccount';
 import { DashBoard } from './Pages/DashBoard';
+// import action from './Pages/CreateAccount'
 // import { ProfileInfo } from './Pages/ProfileInfo';
 
 
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
   },
   {
     path: "createAccount",
-    element: <CreateAccount />
+    element: <CreateAccount />,
+    action: accountCreationAction
   },
   {
     path: "dashBoard",

@@ -1,8 +1,10 @@
-export function accountCreation({ password, confirmPassword }) {
-  let passwordResult = true;
+export function accountCreation(password, confirmPassword ) {
+  let passwordResult;
 
-  if (!(password === confirmPassword)) {
-    passwordResult = false;
+  if (password === confirmPassword) {
+    passwordResult = true;
+  }else{
+    passwordResult  = false
   }
 
   return passwordResult;

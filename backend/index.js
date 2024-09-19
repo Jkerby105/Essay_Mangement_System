@@ -15,10 +15,8 @@ app.use((req,res,next) => {
 
 app.use("/auth",authRoutes)
 
-
 app.use((error,req,res,next) => {
     console.log(error)
 })
-
 
 app.listen(3000);

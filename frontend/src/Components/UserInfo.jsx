@@ -5,17 +5,7 @@ import classes from './UserInfo.module.css'
 export const UserInfo = () => {
   return (
     <div className={classes.container}>
-    <nav className={classes.nav}>
-        <div className={classes['nav-img']}>
-            <img src={imageLogo} alt="logo for WriteNext"></img>
-        </div>
-        <div className={classes['nav-link']}>
-            <div>Profile</div>
-            <div>Import</div>
-            <div>Logout</div>
-        </div>
 
-    </nav>
 
 
     <main className={classes['content-holder']}>

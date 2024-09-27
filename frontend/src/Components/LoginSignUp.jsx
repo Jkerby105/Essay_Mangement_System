@@ -4,14 +4,7 @@ import logo from "../assets/writenext-high-resolution-logo-black-transparent.png
 import bannerImage from "../assets/aaron-burden-CKlHKtCJZKk-unsplash.jpg";
 import classes from "./LoginSignup.module.css";
 
-
 export const LoginSignUp = () => {
-
-
-  function formSubmit(e) {
-    e.preventDefault();
-  }
-
   return (
     <main className={classes.container}>
       <div className={classes["nav-img"]}>
@@ -19,24 +12,17 @@ export const LoginSignUp = () => {
       </div>
       <div className={classes["container-block"]}>
         <section className={classes["container-input"]}>
-          <Form onSubmit={formSubmit}>
+          <Form method="post">
             <div className={classes.group}>
               <header className={classes["container-header"]}>
                 <h1>Login In</h1>
               </header>
               <div className={classes["group-input"]}>
                 <label htmlFor="email"> Email </label>
-                <input type="email" name="email" required ref={email} />
+                <input type="email" name="email" required />
                 <label htmlFor="password"> Password </label>
-                <input
-                  type="text"
-                  name="password"
-                  minLength="10"
-                  required
-                  ref={password}
-                />
+                <input type="text" name="password" minLength="10" required />
               </div>
-
             </div>
 
             <div className={classes["container-button"]}>

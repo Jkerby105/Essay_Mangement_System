@@ -11,7 +11,6 @@ export const CreateAccount = () => {
 
 export async function action({request,params}){
   const data = await request.formData();
-  console.log(data.get('userName'))
 
   const userAccount = {
     userName: data.get('userName'),
@@ -20,9 +19,7 @@ export async function action({request,params}){
     confirmPassword: data.get('confirmPassword')
   }
 
-  console.log(userAccount)
-
-  let response = await fetch('http://localhost:3000/auth/login',{
+  let response = await fetch('http://localhost:3000/auth/create',{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -30,7 +27,9 @@ export async function action({request,params}){
     body: JSON.stringify(userAccount)
   });
 
-    console.log(response)
+    if(!response.ok){
+      throw new Error("unsuccessful login attempt")
+    }
 
   return redirect('/');
 }

@@ -9,56 +9,6 @@
     height: 100vh;
   }
   
-  .nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: rgba(30, 50, 102, 1);
-    position: sticky;
-    width: 100%;
-    height: 135px;
-  }
-  
-  .nav-img {
-    width: 40%;
-  }
-  
-  .nav-img img {
-    height: 100px;
-    margin-top: 14px;
-  }
-  
-  .a1 {
-    display: flex;
-    justify-content: space-between;
-    width: 25%;
-    height: 50px;
-    color: white;
-    font-size: 22px;
-    padding-top: 50px;
-    height: 100%;
-    list-style: none;
-  }
-  
-  .a1 a {
-    direction: none;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .checkbtn {
-    font-size: 2rem;
-    float: right;
-    line-height: 8rem;
-    margin-right: -3.5rem;
-    color: rgb(114, 78, 11);
-    cursor: pointer;
-    display: none;
-  }
-  
-  #check {
-    display: none;
-  }
-  
   .dashboard-container {
     height: 100%;
     width: 100%;
@@ -110,33 +60,3 @@
     margin-bottom: 20px;
     cursor: pointer;
   }
-  
-  @media (max-width: 900px) {
-    .checkbtn {
-      display: block;
-    }
-  
-    .a1 {
-      position: fixed;
-      flex-direction: column;
-      justify-content: flex-start;
-      background-color: rgb(33, 76, 185);
-      width: 20%;
-      height: 60vh;
-      top: 100px;
-      text-align: center;
-      right: -900px;
-      transition: all 0.3s;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-    }
-  
-    .a1 li {
-      margin-bottom: 50px;
-    }
-  
-    #check:checked ~ ul {
-      right: 0%;
-    }
-  }
-  

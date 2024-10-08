@@ -192,6 +192,7 @@ input:focus {
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
+  text-decoration: none;
   border-radius: 10px;
   display: block;
   border: 0px;

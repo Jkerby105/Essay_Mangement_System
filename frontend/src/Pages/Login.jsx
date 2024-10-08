@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LoginSignUp } from '../Components/LoginSignup'
 import { redirect } from 'react-router-dom'
+import { useContext } from 'react'
+import { EssayContext } from '../../store/EssayMangeMent-Context'
 
 export const Login = () => {
+
+  
+
   return (
+
     <LoginSignUp/>
+
   )
 }
 
 export async function action({request,params}){
+
   const data = await request.formData();
 
   const loginInfo = {
@@ -24,7 +32,7 @@ export async function action({request,params}){
     body: JSON.stringify(loginInfo)
   });
 
-  const responseData = await response.json(); // Parse the response body
+  const responseData = await response.json();
 
   console.log(responseData); 
 
@@ -33,6 +41,7 @@ export async function action({request,params}){
   }
 
   localStorage.setItem('token', responseData.token);
+  localStorage.setItem('userId',responseData.userId);
 
   return redirect('/dashBoard');
 }

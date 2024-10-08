@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 const authRoutes = require("./routes/auth");
+const essayRoutes = require("./routes/essay");
 const cors = require("cors");
 require("dotenv").config();
 const { default: mongoose } = require("mongoose");
@@ -13,11 +14,12 @@ app.use(cors());
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
 
 app.use("/auth", authRoutes);
+app.use("/essay",essayRoutes);
 
 app.use((error, req, res, next) => {
   console.log(error);

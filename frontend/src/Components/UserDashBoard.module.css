@@ -56,6 +56,7 @@
   
   .group-folder .fa-folder,
   .fa-folder-plus {
+    color: black;
     font-size: 90px;
     margin-bottom: 20px;
     cursor: pointer;

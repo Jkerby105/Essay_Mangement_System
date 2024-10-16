@@ -7,9 +7,11 @@ export const MainNavigation = () => {
   return (
     <nav className={classes.nav}>
       <div className={classes.logo}>
+        <NavLink to="/Dashboard">
         <div className={classes["nav-img"]}>
           <img src={logoImage} alt="logo for WriteNext"></img>
         </div>
+        </NavLink>
       </div>
 
       <input type="checkbox" id={classes.check}></input>
@@ -42,18 +44,7 @@ export const MainNavigation = () => {
         </li>
         <li>
         <NavLink
-              to="/Dashboard/importEssay"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-            >
-              Import
-            </NavLink>
-        </li>
-        <li>
-        <NavLink
-              to="/Logout"
+              to="/"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }

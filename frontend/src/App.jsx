@@ -9,8 +9,8 @@ import { DashBoard } from './Pages/DashBoard';
 import { EssayRoot } from './Pages/EssayRoot';
 import { ProfileInfo } from './Pages/ProfileInfo';
 import {ImportEssay} from './Pages/ImportEssay';
-import { EssayCreation } from './Pages/EssayCreation';
-import { checkAuthLoader as authLoader, checkAuthLoader } from './util/auth';
+import { EssayCreation} from './Pages/EssayCreation';
+import { checkAuthLoader } from './util/auth';
 import { action as essayAction } from './Pages/EssayCreation';
 
 const router = createBrowserRouter([
@@ -31,7 +31,8 @@ const router = createBrowserRouter([
     children: [
       {    
         index: true,
-        element: <DashBoard/>
+        element: <DashBoard/>,
+
       },
       {
         path: 'Profile',
@@ -40,15 +41,15 @@ const router = createBrowserRouter([
       {
         path: 'ImportEssay',
         element: <ImportEssay/>
+      },
+      {
+        path: "EssayCreation",
+        element: <EssayCreation/>,
+        action: essayAction
       }
 
     ]
   },
-  {
-    path: "EssayCreation",
-    element: <EssayCreation/>,
-    action: essayAction
-  }
 
 ]);
 

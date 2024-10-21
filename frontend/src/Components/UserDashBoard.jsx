@@ -15,12 +15,12 @@ export const UserDashBoard = ({ essays }) => {
 
           <div className={classes["group-folder"]}>
             {userEssays.map((essay) => (
-              <NavLink  key={essay._id} to="/dashBoard/essayCreation/?creation=false">
+              <NavLink  key={essay._id} to={`/dashBoard/essayCreation/?creation=false&essay=${essay._id}`}>
                 <i  className={`fa-solid fa-folder ${classes["fa-folder"]}`}></i>
               </NavLink>
             ))}
 
-            <NavLink to="/dashBoard/essayCreation/?creation=true">
+            <NavLink to="/dashBoard/essayCreation/?creation=true&essay=null">
               <i
                 className={`fa-solid fa-folder-plus ${classes["fa-folder-plus"]}`}
               ></i>

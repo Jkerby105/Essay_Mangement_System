@@ -10,7 +10,7 @@ export const DashBoard = () => {
 
 
   useEffect(() => {
-    async function something() {
+    async function fetchEssays() {
       try {
         const response = await fetch("http://localhost:3000/essay/allEssay/" + id);
         
@@ -24,7 +24,7 @@ export const DashBoard = () => {
       }
     }
     
-      something();
+      fetchEssays();
   }, []); 
 
 

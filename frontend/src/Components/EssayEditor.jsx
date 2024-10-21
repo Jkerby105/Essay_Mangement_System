@@ -10,10 +10,12 @@ const apiKey = import.meta.env.VITE_ACCESS_KEY;
 export default function EssayEditor(prop) {
   const dialog = useRef();
   // console.log(prop.creation);
+  let userEssay = prop.essayInput;
+  let tempTitle = null;
 
-  const [title, setTitle] = useState("No Title");
+  const [title, setTitle] = useState(prop?.essayInput?.title || 'No Title');
+
   const [disable, setDisable] = useState(false);
-
   const editorRef = useRef(null);
   const submit = useSubmit();
 
@@ -23,6 +25,10 @@ export default function EssayEditor(prop) {
       const formData = new FormData();
       formData.append("essayValue", currentEssayContent);
       formData.append("title", title);
+      if (!prop.creation) {
+        formData.append("update", "true");
+        formData.append("essayID", prop.essayID);
+      }
       submit(formData, { method: "POST" });
     }
   };
@@ -43,9 +49,7 @@ export default function EssayEditor(prop) {
 
   return (
     <>
-      <Modal
-        ref={dialog}
-      />
+      <Modal ref={dialog} />
 
       <div className={classes["nav-img"]}>
         <form>
@@ -89,7 +93,13 @@ export default function EssayEditor(prop) {
         <Editor
           apiKey={apiKey}
           onInit={(_evt, editor) => (editorRef.current = editor)}
-          initialValue="<p>This is the initial content of the editor.</p>"
+          initialValue={
+            userEssay
+              ? userEssay.draft
+              : "<p>This is the initial content of the editor.</p>"
+          }
+          // initialValue="<p>This is the initial content of the editor.</p>"
+
           init={{
             height: 700,
             width: 1700, // Adjust the width of the editor here
@@ -102,14 +112,23 @@ export default function EssayEditor(prop) {
       </div>
 
       <div className={classes["button-container"]}>
-        <button
-          onClick={log}
-          className={classes["button-87"]}
-          disabled={!disable}
-        >
-          Save Essay
+        {prop.creation ? (
+          <button
+            onClick={log}
+            className={classes["button-87"]}
+            disabled={!disable}
+          >
+            Save Essay
+          </button>
+        ) : (
+          <button onClick={log} className={classes["button-87"]}>
+            Save Essay
+          </button>
+        )}
+
+        <button onClick={handleCancel} className={classes["button-87"]}>
+          Cancel
         </button>
-        <button onClick={handleCancel} className={classes["button-87"]}>Cancel</button>
       </div>
     </>
   );

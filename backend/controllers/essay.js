@@ -8,7 +8,7 @@ module.exports.postEssay = async (req,res,next) => {
     const essayDraft = req.body.draft;
     const essayTitle = req.body.essayTitle;
     const userID = Object(id);
-    console.log(userID)
+    // console.log(userID)
 
     const essay = new Essay({
         title: essayTitle,
@@ -28,7 +28,7 @@ module.exports.postEssay = async (req,res,next) => {
 }
 
 module.exports.patchEssay = async (req,res,next) => {
-        console.log("patch essay")
+        // console.log("patch essay")
         const essayID = req.params.id;
         const essayDraft = req.body.draft;
         const essayTitle = req.body.essayTitle;
@@ -61,9 +61,21 @@ module.exports.getAllEssay = async(req,res,next) => {
 }
 
 module.exports.getOneEssay = async(req,res,next) => {
-    console.log("Get ONE")
+    // console.log("Get ONE")
     const essayId = req.params.id;
     Essay.find({_id: essayId})
+    .then(result => {
+        res.status(201).json({userEssay: result});
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+module.exports.deleteEssay = async(req,res,next) => {
+    // console.log("delete");
+    const essayId = req.params.id;
+    Essay.deleteOne({_id: essayId})
     .then(result => {
         res.status(201).json({userEssay: result});
     })

@@ -5,15 +5,7 @@
     justify-content: space-evenly;
   }
   
-  .nav-img img {
-    /* left: 500px; */
-    height: 100px;
-    width: 5%;
-    margin-top: 30px;
-    /* margin: 5px 46.5%; */
-    /* margin: 1px 0px 10px 530px; */
-  }
-  
+
   .inputHolder{
     margin-top: 20px;
     margin-right: 100px;
@@ -126,4 +118,35 @@
 
 .button-86:active {
   transform: scale(0.95);
+}
+
+.delete {
+  color: white;
+  background-color: red;
+  background-image: none;
+  margin-top: 50px;
+  padding: 0px 0px;
+  width: 20%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delete:hover {
+  background-color: darkred;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.delete:active {
+  background-color: crimson;
+  box-shadow: none;
+}
+
+.delete:focus {
+  outline: none;
 }

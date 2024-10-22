@@ -101,10 +101,11 @@ label {
   color: red;
 }
 
-input {
+.input {
   padding: 4px;
   margin-bottom: 5px;
   border-radius: 5px;
+  width: 100%;
   outline: 0;
   border-top: 0;
   border-left: 0;

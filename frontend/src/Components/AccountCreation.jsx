@@ -60,11 +60,12 @@ export const AccountCreation = () => {
               </header>
               <div className={classes["group-input"]}>
                 <label htmlFor="email"> Email </label>
-                <input type="email" name="email" required ref={email} />
+                <input className={classes.input} type="email" name="email" required ref={email} />
                 <label htmlFor="username" > Username </label>
-                <input type="text" name="username" required ref={userName} />
+                <input  className={classes.input}  type="text" name="username" required ref={userName} />
                 <label htmlFor="password" className={passwordResult? '' : classes.error }> Password </label>
                 <input
+                 className={classes.input} 
                   type="text"
                   name="password"
                   minLength="10"
@@ -73,6 +74,7 @@ export const AccountCreation = () => {
                 />
                 <label htmlFor="confirmPassword" className={passwordResult? '' : classes.error }> Confirm Password </label>
                 <input
+                 className={classes.input} 
                   type="text"
                   name="confirmPassword"
                   minLength="10"

@@ -19,9 +19,9 @@ export const LoginSignUp = () => {
               </header>
               <div className={classes["group-input"]}>
                 <label htmlFor="email"> Email </label>
-                <input type="email" name="email" required />
+                <input  className={classes.input}  type="email" name="email" required />
                 <label htmlFor="password"> Password </label>
-                <input type="text" name="password" minLength="10" required />
+                <input className={classes.input}  type="text" name="password" minLength="10" required />
               </div>
             </div>
 
@@ -41,6 +41,7 @@ export const LoginSignUp = () => {
                   </Link>
                 </div>
               </div>
+                  <div className={classes.forgotPassword}>Forgot Password</div>
             </div>
           </Form>
         </section>

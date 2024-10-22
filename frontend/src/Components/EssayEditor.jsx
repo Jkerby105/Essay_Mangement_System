@@ -9,20 +9,22 @@ const apiKey = import.meta.env.VITE_ACCESS_KEY;
 
 export default function EssayEditor(prop) {
   const dialog = useRef();
-  // console.log(prop.creation);
+
   let userEssay = prop.essayInput;
   let tempTitle = null;
 
-  const [title, setTitle] = useState(prop?.essayInput?.title || 'No Title');
+  const [title, setTitle] = useState(prop?.essayInput?.title || "No Title");
 
   const [disable, setDisable] = useState(false);
   const editorRef = useRef(null);
+  const [cancel,setCancel] = useState(prop.creation);
   const submit = useSubmit();
 
-  const log = () => {
+  const log = (value) => {
+    const formData = new FormData();
+
     if (editorRef.current) {
       const currentEssayContent = editorRef.current.getContent();
-      const formData = new FormData();
       formData.append("essayValue", currentEssayContent);
       formData.append("title", title);
       if (!prop.creation) {
@@ -32,6 +34,14 @@ export default function EssayEditor(prop) {
       submit(formData, { method: "POST" });
     }
   };
+
+  function deleteEssay(){
+    console.log("hello")
+    const formData = new FormData();
+    formData.append("delete", "delete");
+    formData.append("essayID", prop.essayID);
+    submit(formData, { method: "POST" });
+  }
 
   function saveInput(e) {
     e.preventDefault();
@@ -49,7 +59,7 @@ export default function EssayEditor(prop) {
 
   return (
     <>
-      <Modal ref={dialog} />
+      <Modal ref={dialog} cancel={cancel} removeEssay={deleteEssay}/>
 
       <div className={classes["nav-img"]}>
         <form>
@@ -78,13 +88,21 @@ export default function EssayEditor(prop) {
                 </button>
               </div>
             ) : (
-              <button onClick={enableEditing} className={classes["button-86"]}>
-                Edit
-              </button>
+              <div className={classes.buttonGroup}>
+                <button onClick={saveInput} className={classes["button-86"]}>
+                  Edit
+                </button>
+              </div>
             )}
           </div>
         </form>
-        <img src={logo} alt="logo for WriteNext" />
+        {!prop.creation ? (
+          <button onClick={handleCancel} className={classes.delete}>
+            Delete
+          </button>
+        ) : (
+          ""
+        )}
       </div>
 
       <div className={classes["editor-container"]}>

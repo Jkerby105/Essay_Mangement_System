@@ -98,10 +98,11 @@ label {
   margin-bottom: 4px;
 }
 
-input {
+.input {
   padding: 4px;
   margin-bottom: 5px;
   border-radius: 5px;
+  width: 100%;
   outline: 0;
   border-top: 0;
   border-left: 0;
@@ -202,6 +203,33 @@ input:focus {
 .button-87:active {
   transform: scale(0.95);
 }
+
+.forgotPassword {
+  color: #3471db;
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 15px;
+  text-align: center;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.forgotPassword:hover {
+  color: #1e73b3; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.forgotPassword:active {
+  color: #2a9fd6;
+  text-shadow: none;
+}
+
 
 @media (max-width: 1690px) {
 

@@ -40,8 +40,10 @@ export const LoginSignUp = () => {
                     Create Account
                   </Link>
                 </div>
+              <div>
+                  <Link to="/forget"  className={classes["button-87"]}>Forgot Password</Link>
               </div>
-                  <div className={classes.forgotPassword}>Forgot Password</div>
+              </div>
             </div>
           </Form>
         </section>

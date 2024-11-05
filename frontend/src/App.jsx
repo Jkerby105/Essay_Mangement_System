@@ -1,60 +1,68 @@
-import './App.css'
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Login, action as loginAction } from "./Pages/Login";
 import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Login, action as loginAction } from './Pages/Login'
-import { CreateAccount, action as accountCreationAction } from './Pages/CreateAccount';
-import { DashBoard } from './Pages/DashBoard';
-import { EssayRoot } from './Pages/EssayRoot';
-import { ProfileInfo } from './Pages/ProfileInfo';
-import {ImportEssay} from './Pages/ImportEssay';
-import { EssayCreation} from './Pages/EssayCreation';
-import { checkAuthLoader } from './util/auth';
-import { action as essayAction } from './Pages/EssayCreation';
+  CreateAccount,
+  action as accountCreationAction,
+} from "./Pages/CreateAccount";
+import { DashBoard } from "./Pages/DashBoard";
+import { EssayRoot } from "./Pages/EssayRoot";
+import ResetPassword from "./Pages/Email/resetPassword";
+import {ForgetPassword, action as forgetPasswordAction} from "./Pages/Email/forgetPassword";
+import { ProfileInfo } from "./Pages/ProfileInfo";
+import { ImportEssay } from "./Pages/ImportEssay";
+import { EssayCreation } from "./Pages/EssayCreation";
+import { checkAuthLoader } from "./util/auth";
+import { action as essayAction } from "./Pages/EssayCreation";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
-    action: loginAction
+    action: loginAction,
   },
   {
     path: "createAccount",
     element: <CreateAccount />,
-    action: accountCreationAction
+    action: accountCreationAction,
   },
   {
     path: "DashBoard",
-    element: <EssayRoot/>,
+    element: <EssayRoot />,
     loader: checkAuthLoader,
     children: [
-      {    
+      {
         index: true,
-        element: <DashBoard/>,
-
+        element: <DashBoard />,
       },
       {
-        path: 'Profile',
-        element: <ProfileInfo/>
+        path: "Profile",
+        element: <ProfileInfo />,
       },
       {
-        path: 'ImportEssay',
-        element: <ImportEssay/>
+        path: "ImportEssay",
+        element: <ImportEssay />,
       },
       {
         path: "EssayCreation",
-        element: <EssayCreation/>,
-        action: essayAction
-      }
-
-    ]
+        element: <EssayCreation />,
+        action: essayAction,
+      },
+    ],
   },
-
+  {
+    path:"/forget",
+    element: <ForgetPassword/>,
+    action: forgetPasswordAction
+  },
+  {
+    path: "/reset",
+    element: <ResetPassword/>
+  }
 ]);
 
 function App() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
